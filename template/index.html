@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</head>
+
+<body class="container">
+    <div class="row">
+        <h2>Sentiment Analysis</h2>
+        <div class="col-sm-6">
+            <form action="/" method='post'>
+                <div class="form-group">
+                    <label for="comment">Input text</label>
+                    <textarea class="form-control" rows="5" id="input" name="input"></textarea>
+                    <button id="submit" type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="col-sm-6">
+            <label for="comment">Output</label>
+            <div class="well">
+                Sentiment: <span id="sentiment">{{sentiment}}</span>
+                <br>
+                Confident Score: <span id="score">{{score}}</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
